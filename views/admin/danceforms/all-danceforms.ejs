@@ -1,0 +1,24 @@
+<%- include('../../shared/includes/head', { pageTitle: 'All Danceforms' }) %>
+<link rel="stylesheet" href="/styles/danceforms.css">
+<script src="/scripts/danceform-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <section>
+      <h1>Manage Dance Forms</h1>
+      <p>
+        <a href="/admin/danceform/new" class="btn">Add Danceform</a>
+      </p>
+    </section>
+    <section>
+      <ul id="danceforms-grid">
+        <% for (const danceform of danceforms) { %>
+          <li>
+            <%- include('../../shared/includes/danceform-item', { danceform: danceform }) %>
+          </li>
+        <% } %>
+      </ul>
+    </section>
+  </main>
+<%- include('../../shared/includes/footer') %>

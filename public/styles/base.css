@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", "sans-serif";
+
+  --color-gray-50: rgb(243, 236, 230);
+  --color-gray-100: rgb(207, 201, 195);
+  --color-gray-300: rgb(173, 121, 72);
+  --color-gray-400: rgb(70, 65, 60);
+  --color-gray-500: rgb(50, 56, 53);
+  --color-gray-600: rgb(32, 29, 26);
+  --color-gray-700: rgb(31, 26, 22);
+
+  --color-primary-50: rgb(253, 224, 200);
+  --color-primary-100: rgb(253, 214, 183);
+  --color-primary-200: rgb(250, 191, 143);
+  --color-primary-400: rgb(223, 159, 41);
+  --color-primary-500: rgb(212, 136, 14);
+  --color-primary-700: rgb(212, 120, 14);
+  --color-primary-200-contrast: rgb(100, 46, 2);
+  --color-primary-500-contrast: white;
+
+  --color-error-100: rgb(255, 192, 180);
+  --color-error-500: rgb(199, 51, 15);
+
+  --color-primary-500-bg: rgb(63, 60, 58);
+
+  --space-1: 0.25rem;
+  --space-2: 0.4rem;
+  --space-4: 1rem;
+  --space-6: 1.2rem;
+  --space-8: 2rem;
+
+  --border-radius-small: 4px;
+  --border-radius-medium: 6px;
+
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  /*background: var(--color-gray-500);*/
+  background-color:rgb(10, 10, 10);
+  color: var(--color-gray-100);
+  margin: 0;
+}
+
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+ul, 
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font:oblique;
+  color: #dfc977; 
+}
+a:hover{
+  color: #f4e4aa;
+}
+
+h1{
+  font-family: 'Taviraj', serif;
+  font-size: 2rem;
+  color: #DCCA87;
+  margin-top: 2rem;
+}
+
+h2{
+  font-family: 'Cormorant Upright',serif;
+  font-size: 2rem;
+  color: #b763a4; 
+}
+
+
+.btn {
+  border-radius: 2rem;
+  box-shadow: 0 8px 6px -6px #000;
+  font-size: 1.4rem;
+  border: none;
+  color:rgb(14, 8, 1);
+  cursor: pointer;
+  font: inherit;
+  font-family: 'Work Sans', sans-serif;
+  padding: var(--space-2) var(--space-6);
+  background-color: rgb(247, 247, 219);
+  color:rgb(14, 8, 1);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: green;
+  color:#fff;
+}
+
+.btn-alt {
+  border-radius: 2rem;
+  box-shadow: 0 8px 6px -6px #000;
+  font-size: 1rem;
+  border: none;
+  color:rgb(14, 8, 1);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.8rem 1rem;
+  background-color: rgb(247, 247, 232);
+  color: var(--color-primary-500);
+}
+
+.btn-alt:hover,
+.btn-alt:active {
+  background-color: green;
+  color:#fff;
+}
+
+.alert {
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-error-100);
+  color: var(--color-error-500);
+  padding: var(--space-4);
+}
+
+.alert h2 {
+  font-size: 1rem;
+  font-family: 'Work Sans', sans-serif;
+  margin: var(--space-2) 0;
+  text-transform: uppercase;
+}
+
+.alert p {
+  margin: var(--space-2) 0;
+}
+
+.badge {
+  margin-left: var(--space-2);
+  padding: 0.15rem var(--space-4);
+  border-radius: 10rem;
+  background-color: var(--color-primary-700);
+  color: var(--color-primary-500-contrast); 
+}
+
+.nav-items button{
+  text-transform: uppercase;
+  border-radius: 2rem;
+  box-shadow: 0 8px 6px -6px #0a0a0a;
+  font-size: 1.4rem;
+  padding:0.8rem 1.8rem;
+  border: none;
+  color:rgb(238, 132, 10);
+}
+.nav-items button:hover{
+  box-shadow: 0 8px 10px -6px #4f4f4f;
+}
+
+#danceform{
+  border-radius: 2rem;
+  box-shadow: 0 8px 6px -6px #0a0a0a;
+  font-size: 1rem;
+  padding:0.8rem;
+  border: none;
+  color:rgb(232, 134, 53);
+}
+
+

@@ -1,0 +1,39 @@
+<article class="registration-item">
+  <header class="registration-summary">
+    <p><span class="registration-item-fee"></span><%= registration.formattedDate %></p>
+    <p><span class="badge"><%= registration.status.toUpperCase() %></span></p>
+  </header>
+
+  <section class="registration-details">
+    <% if (locals.isAdmin) { %>
+      <address>
+        <h3><a href="mailto:<%= registration.userData.email %>">Name - <%= registration.userData.name %></a></h3>
+              <li><h3>Age - <%= registration.userData.age %></h3></li>
+              <li><h3>Email - <%= registration.userData.email %></h3></li>
+              <li><h3>City - <%= registration.userData.city %></h3></li>
+              <li><h3>Mobile No. - <%= registration.userData.mobile_no %></h3></li>
+      </address>
+
+    <% } %>
+    
+      <% for (const item of registration.danceformData.items) { %>
+        <h3><%= item.danceform.title %> (Rs. <%= item.totalFee %>)</h3>
+      <% } %>
+      <p>Rs. <%= registration.danceformData.totalFee.toFixed(2) %> </p>
+  </section>
+
+  <% if (locals.isAdmin) { %>
+    <section class="registration-actions">
+      <form>
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <input type="hidden" name="registrationid" value="<%= registration.id %>">
+        <select name="status">
+          <option value="Admission in Process" <% if (registration.status === 'Admission in Process') { %>selected<% } %>><h3>Admission in Process</h3></option>
+          <option value="registered" <% if (registration.status === 'registered') { %>selected<% } %>><h2>Registered</h2></option>
+          <option value="declined" <% if (registration.status === 'declined') { %>selected<% } %>><h4>Declined</h4></option>
+        </select>
+        <button class="btn btn-alt">Update</button>
+      </form>
+    </section>
+  <% } %>
+</article>

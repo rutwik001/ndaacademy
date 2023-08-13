@@ -1,0 +1,44 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Admisssion' }) %>
+<link rel="stylesheet" href="/styles/apply.css">
+<script src="/scripts/apply-item-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <div>
+      <h1>Admission</h1>
+    <ul id="apply-items">
+      <% for (const applyItem of locals.apply.items) { %>
+        <li>
+          <%- include('includes/apply-item', { item: applyItem }) %>
+        </li>
+      <% } %>
+    </ul>
+    <div id="apply-total">
+      
+      <% if (locals.isAuth) { %>
+        <p>Fees : Rs. <span id="apply-total-fee"><%= locals.apply.totalFee.toFixed(2) %></span></p>
+        <form action="/registrations" method="POST">
+          <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+          <button class="btn">Apply</button>
+        </form>
+      <% } else { %>
+        <p id="apply-total-fallback">Login to register for your dream Course.</p>
+      <% } %>
+    </div>
+   
+    
+      <div class="col-md-8 col-12 main_header_left">
+                          
+                        <h6>Narayanam Dance Academy is a well-known dance school in Nagpur, MH. The dance school has a team of instructors who train plenty of pupils in a vast range of dance styles. At our esteemed academy, our primary mission is to nurture the souls of dance enthusiasts, guiding them on a transformative journey through the captivating realm of rhythmic movements. Together, let us embrace the power of dance, transcending boundaries, and illuminating the world with the resplendent beauty of movement.</h6>
+                        <h6>Our dance teachers instruct and train students in dance, incorporating elements of technique, performance, and choreography in their educational approach.</h6>
+                        <br> 
+                        <h1>Dance Forms we teach</h1>
+                        <h6>Bollywood, Contemporary, Lyrical Hip-Hop, Bharatnatayam, Tap Dance, Ballet, Folk Dance, Street Dance, Breakdance</h6>
+       </div>
+             
+  
+    
+   
+  </main>
+<%- include('../../shared/includes/footer') %>

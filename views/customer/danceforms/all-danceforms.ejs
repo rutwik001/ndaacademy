@@ -1,0 +1,23 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Dance Forms' }) %>
+<link rel="stylesheet" href="/styles/danceforms.css">
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+
+        <div class="main_header_right">
+                      <span><h1><i>Narayanam Dance Academy</i></h1></span>
+                      <p>Dancers don't need wings to fly</p>
+        </div>
+         
+<br>
+    <h1>Dance Forms</h1>
+    <ul id="danceforms-grid">
+      <% for (const danceform of danceforms) { %>
+        <li>
+          <%- include('../../shared/includes/danceform-item', { danceform: danceform }) %>
+        </li>
+      <% } %>
+    </ul>
+  </main>
+<%- include('../../shared/includes/footer') %>

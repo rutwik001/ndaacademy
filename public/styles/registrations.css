@@ -1,0 +1,65 @@
+
+.registration-item {
+  background-color: var(--color-gray-400);
+  border-radius: var(--border-radius-small);
+  padding: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.registration-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.registration-summary h2,
+.registration-summary p ,.registration-details p{
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.registration-item-price {
+  color: var(--color-primary-500);
+}
+
+.registration-item .status {
+  display: flex;
+  min-width: 15rem;
+}
+
+.registration-item .status .badge {
+  margin-right: var(--space-4);
+}
+
+.registration-details ul {
+  list-style: square;
+  margin-left: var(--space-8);
+}
+
+.registration-details li {
+  margin-bottom: var(--space-2);
+  list-style: none;
+}
+
+.registration-details h3 {
+  font-weight: 200;
+  font-family: 'Libre Franklin', sans-serif;
+  color: rgb(206, 182, 152);
+}
+
+.registration-item select {
+  font: inherit;
+  padding: var(--space-2);
+  border-radius: var(--border-radius-small);
+}
+
+@media (min-width: 48rem) {
+  .registration-summary {
+    flex-direction: row;
+  }
+
+}

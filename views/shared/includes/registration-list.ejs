@@ -1,0 +1,7 @@
+<ol>
+  <% for (const registration of registrations) { %>
+    <li>
+      <%- include('registration-item', { registration: registration }) %>
+    </li>
+  <% } %>
+</ol>

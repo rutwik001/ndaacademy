@@ -1,0 +1,71 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Signup' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1>Create New Account</h1>
+    <% if (inputData.errorMessage) { %>
+      <section class="alert">
+        <h2>Invalid Input</h2>
+        <p><%= inputData.errorMessage %></p>
+      </section>
+    <% } %>
+    <form action="/signup" method="POST">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+      <p>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" value="<%= inputData.email %>" required>
+      </p>
+      <p>
+        <label for="confirm-email">Confirm Email</label>
+        <input type="email" id="confirm-email" name="confirm-email" value="<%= inputData.confirmEmail %>" required>
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="6" value="<%= inputData.password %>" required>
+      </p>
+      <hr>
+      <p>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" value="<%= inputData.fullname %>" required>
+      </p>
+      <p>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" value="<%= inputData.age %>" required>
+      </p>
+      <p>
+        <label for="mobile_no">Mobile No.</label>
+        <input 
+          type="text" 
+          id="mobile_no" 
+          name="mobile_no" 
+          minlength="10" 
+          maxlength="10" 
+          value="<%= inputData.mobile_no %>"
+          required>
+      </p>
+      <p>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" value="<%= inputData.city %>" required>
+      </p>
+      <p>
+         <label for="danceform">Choose Dance form :</label>
+                           <select name="danceform" id="danceform" placeholder="Dance Form">
+                                <option value="Bollywood">Bollywood</option>
+                                <option value="Contempory">Contempory</option>
+                                <option value="Lyrical Hip-Hop">Lyrical Hip-Hop</option>
+                                <option value="Bharatnatyam">Bharatnatyam</option>
+                                <option value="Tap Dance">Tap Dance</option>
+                                <option value="Ballet">Ballet</option>
+                                <option value="Folk Dance">Folk Dance</option>
+                                <option value="Street Dance">Street Dance</option>
+                                <option value="Breakdancing">Breakdancing</option>
+                            </select>
+      </p>                    
+      <button class="btn">Create Account</button>
+      <p id="switch-form"><a href="/login">Login instead</a></p>
+    </form>
+  </main>
+<%- include('../../shared/includes/footer') %>

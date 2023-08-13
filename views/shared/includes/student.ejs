@@ -1,0 +1,25 @@
+<article class="registration-item">
+    <header class="registration-summary">
+      <h2><span class="registration-item-fee"></span><%= registration.formattedDate %></h2>
+      <p><span class="badge"><%= registration.status.toUpperCase() %></span></p>
+    </header>
+  
+    <section class="registration-details">
+      <% if (locals.isAdmin) { %>
+
+        
+        <ul>  
+            <% for (const item of registration.danceformData.items) { %>
+              <li><h4>Name - <%= registration.userData.name %></h4></li>
+              <li><h4>Age - <%= registration.userData.age %></h4</li>
+              <li><h4>Email - <%= registration.userData.email %></h4</li>
+              <li><h4>City - <%= registration.userData.city %></h4</li>
+              <li><h4>Mobile No. - <%= registration.userData.mobile_no %></h4</li>
+              <li><h3><%= item.danceform.title %> - (Rs. <%= item.totalFee %>)</h3></li>
+            <% } %>
+          </ul>
+      <% } %>
+      
+    </section>
+
+</article>

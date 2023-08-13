@@ -1,0 +1,22 @@
+<%- include('../../shared/includes/head', { pageTitle: danceform.title }) %>
+<link rel="stylesheet" href="/styles/danceforms.css">
+<script src="/scripts/apply-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main id="danceform-details">
+    <header>
+      <img src="<%= danceform.imageUrl %>" alt="<%= danceform.title %>">
+      <div id="danceform-info">
+        <h1><%= danceform.title %></h1>
+        <p>Rs. <%= danceform.fees %></p>
+       
+          <button class="btn" data-danceformid="<%= danceform.id %>" data-csrf="<%= locals.csrfToken %>">Click to Register</button>
+          <h4>Proceed to Admission Section for furthur process.</h4>
+
+      </div>
+    </header>
+    <h3>Instructor : <%= danceform.instructor %></h3>
+    <p id="danceform-description"><%= danceform.description %></p>
+  </main>
+<%- include('../../shared/includes/footer') %>

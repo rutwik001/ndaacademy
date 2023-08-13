@@ -1,0 +1,14 @@
+<article class="danceform-item">
+  <img src="<%= danceform.imageUrl %>" alt="<%= danceform.title %>" />
+  <div class="danceform-item-content">
+    <h2><%= danceform.title %></h2>
+    <div class="danceform-item-actions">
+      <% if (locals.isAdmin) { %>
+        <a class="btn" href="/admin/danceforms/<%= danceform.id %>">View & Edit</a>
+        <button class="btn" data-danceformid="<%= danceform.id %>" data-csrf="<%= locals.csrfToken %>">Delete</button>
+      <% } else { %>
+        <a class="btn" href="/danceforms/<%= danceform.id %>">View Details</a>
+      <% } %>
+    </div>
+  </div>
+</article>
